@@ -1,0 +1,423 @@
+﻿<?php
+
+// Security recommendation from wp.
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
+function My_SpaceOperaPlotFunction(){
+// Use the day of the year to get a daily changing
+// quote changing (z = 0 till 365)
+$DayOfTheYear = date('i'); 
+ 
+// You could also use:
+//  --> date('m'); // Quote changes every month
+//  --> date('z'); // Quote changes every day
+//  --> date('h'); // Quote changes every hour
+//  --> date('i'); // Quote changes every minute
+
+srand ((double) microtime() * 1000000);
+
+$Cargo[]="a critical resupply";
+$Cargo[]="a gentically engineered clone";
+$Cargo[]="a hibernating serial killer";
+$Cargo[]="a little girl with a dark secret";
+$Cargo[]="a planet destroying bomb";
+$Cargo[]="a powerful new energy supply";
+$Cargo[]="a religious relic of crucial importance";
+$Cargo[]="a virulent disease";
+$Cargo[]="an artifact of a legendary ancient alien race";
+$Cargo[]="an experimental starfighter";
+$Cargo[]="an illegal weapon";
+$Cargo[]="nothing of apparent value";
+$Cargo[]="one metric ton of a powerful narcotic";
+$Cargo[]="the blood soaked body of the universe's most powerful diplomat";
+$Cargo[]="the cryogenically frozen body of someone important";
+$Cargo[]="the last specimens of an endangered organism";
+$Cargo[]="the only signed copy of the peace treaty";
+$Cargo[]="the first working FTL drive";
+$Cargo[]="the sacred royal treasure of a prominent alien race";
+$Cargo[]="the survivors of a genocide";
+$Cargo[]="a batch of deactivated robots";
+$Cargo[]="specially encoded data storage devices";
+
+$Competition[]="a fanatic cult";
+$Competition[]="a former lover";
+$Competition[]="a large crime syndicate";
+$Competition[]="a militaristic faction with dreams of galactic domination";
+$Competition[]="a new alien race recently risen to space-faring";
+$Competition[]="a pirate captain";
+$Competition[]="a powerful corporation or one of its subsidiaries";
+$Competition[]="a remorseless general";
+$Competition[]="a rogue government official/office";
+$Competition[]="a team of expert bounty hunters";
+$Competition[]="an important cleric of the Imperial Diocese";
+$Competition[]="its rightful owner";
+$Competition[]="nightmarish creatures from outside the galaxy";
+$Competition[]="someone the characters left for dead back in the war";
+$Competition[]="the Emperor of the Galaxy";
+$Competition[]="the person/faction that hired the characters";
+$Competition[]="whoever the characters stole it from";
+$Competition[]="mysterious persons unknown";
+$Competition[]="a character's former employer";
+$Competition[]="a character's rivals";
+
+$Complication[]="a new AI, this time a little less sarcastic";
+$Complication[]="a new engine";
+$Complication[]="a new mechanic/technician with flexible morals";
+$Complication[]="a new navigator";
+$Complication[]="a new, more powerful reactor core";
+$Complication[]="advice from a sage";
+$Complication[]="an advance payment";
+$Complication[]="an extension of the character's contract";
+$Complication[]="Back pay for the last job the characters did for this employer";
+$Complication[]="better weapons and shields";
+$Complication[]="guarantees of safety for someone's dependents";
+$Complication[]="more fuel";
+$Complication[]="permission from a governing body";
+$Complication[]="something to distract the character's opposition";
+$Complication[]="something to fix the radiation/fluid leak";
+$Complication[]="something to safely contain what the characters are carrying";
+$Complication[]="supplies for the trip";
+$Complication[]="the blueprints for the character's ship";
+$Complication[]="the planet the characters are on to be quarantined";
+$Complication[]="the character's ship has been taken";
+
+$Destination[]="a badly outmatched fleet about to engage the enemy in a last-ditch battle";
+$Destination[]="a maximum-security prison on an uninhabited world";
+$Destination[]="a neglected mining colony way out on the frontier";
+$Destination[]="a secret temple on a remote planet";
+$Destination[]="a top secret deep space research lab";
+$Destination[]="agents of the imperial army";
+$Destination[]="an underworld contact who the characters think will give the characters a good price for it";
+$Destination[]="an uninhabited world the characters had to hole up in one time";
+$Destination[]="Earth";
+$Destination[]="home";
+$Destination[]="one of the last known pockets of the resistance";
+$Destination[]="the alien's despot king";
+$Destination[]="the chief historian of the Imperial Archives";
+$Destination[]="the edge of known space at coded coordinates in the character's navigation computer";
+$Destination[]="the heart of the galaxy";
+$Destination[]="the ship doctor's compatriots/lab";
+$Destination[]="someone that can keep it safe for us";
+$Destination[]="a character's father";
+$Destination[]="the character's hideout";
+$Destination[]="a character's old boss";
+
+$Helper[]="a crewmember's ex-wife";
+$Helper[]="a disgraced polician infamous for scandalous habits";
+$Helper[]="a family member with a commission in the Imperial Navy";
+$Helper[]="a few of the Emperor's advisors";
+$Helper[]="a friend with a pirate crew";
+$Helper[]="a grizzled war vet with nothing left to lose";
+$Helper[]="a legendary ghost ship populated with androids";
+$Helper[]="a mysterious stranger who contacts the characters out of the blue";
+$Helper[]="a team of adrenaline-seeking smugglers";
+$Helper[]="a tenancious street kid the characters met when tehy got here";
+$Helper[]="an eccentric reclusive scientist";
+$Helper[]="an old sage";
+$Helper[]="an untrustworthy acquaintance of the characters";
+$Helper[]="no one but the characters";
+$Helper[]="someone the characters saved back in the war";
+$Helper[]="the bishop";
+$Helper[]="the captain's mentor";
+$Helper[]="the leader of the local insurgency";
+$Helper[]="the planetary governor's younger brother";
+$Helper[]="the character's real boss";
+$Helper[]="a xenobiologist";
+$Helper[]="an astrogation programmer";
+$Helper[]="a self-taught starship pilot";
+$Helper[]="an AI psychologist";
+$Helper[]="a relative";
+$Helper[]="a friend";
+$Helper[]="an alcoholic";
+$Helper[]="a cowboy";
+$Helper[]="an architect";
+$Helper[]="a fighter";
+$Helper[]="a health nut";
+$Helper[]="a bartender";
+$Helper[]="a recluse";
+$Helper[]="a florist";
+$Helper[]="a cop";
+$Helper[]="a hairdresser";
+$Helper[]="a gun fanatic";
+$Helper[]="a writer";
+$Helper[]="a firefighter";
+$Helper[]="an animal trainer";
+$Helper[]="a dog groomer";
+$Helper[]="a nudist";
+$Helper[]="an actor";
+$Helper[]="a waiter";
+$Helper[]="an arsonist";
+$Helper[]="a slacker";
+$Helper[]="a pothead";
+$Helper[]="a blind person";
+$Helper[]="a street thug";
+$Helper[]="a pick-pocket";
+$Helper[]="a former darknet hacker";
+$Helper[]="a retired military officer";
+$Helper[]="a xenolinguist";
+$Helper[]="a war veteran";
+$Helper[]="an assassin";
+$Helper[]="a stellar explorer";
+$Helper[]="a gentleman thief";
+$Helper[]="a professional gambler";
+$Helper[]="a wealthy heiress";
+
+/** Opening Setting **/
+$setting[]="a 24-hour restaurant";
+$setting[]="an airport";
+$setting[]="an amusement park";
+$setting[]="an antique shop";
+$setting[]="an apartment";
+$setting[]="an aquarium";
+$setting[]="an art museum";
+$setting[]="a bakery";
+$setting[]="a bank";
+$setting[]="a bar";
+$setting[]="a beach";
+$setting[]="a boardwalk";
+$setting[]="a bomb shelter";
+$setting[]="a bookstore";
+$setting[]="a boulevard";
+$setting[]="a boutique";
+$setting[]="a brothel";
+$setting[]="a bus depot";
+$setting[]="a casino";
+$setting[]="a cathedral";
+$setting[]="a cemetery";
+$setting[]="the center of town";
+$setting[]="a church";
+$setting[]="a city college";
+$setting[]="the city dump";
+$setting[]="City Hall";
+$setting[]="a coffeehouse";
+$setting[]="a concert hall";
+$setting[]="a convention center";
+$setting[]="a courthouse";
+$setting[]="a day-care center";
+$setting[]="a delicatessen";
+$setting[]="a department store";
+$setting[]="a fast-food restaurant";
+$setting[]="a fire";
+$setting[]="a fire station";
+$setting[]="a freeway";
+$setting[]="a golf course";
+$setting[]="a health spa";
+$setting[]="a high school";
+$setting[]="home";
+$setting[]="a hospital";
+$setting[]="a hotel";
+$setting[]="an industrial park";
+$setting[]="a jail";
+$setting[]="a mobile home park";
+$setting[]="a movie location";
+$setting[]="a nightclub";
+$setting[]="an office building";
+$setting[]="a parking garage";
+$setting[]="a playground";
+$setting[]="a post office";
+$setting[]="a prison";
+$setting[]="a public library";
+$setting[]="a real estate development";
+$setting[]="a restaurant";
+$setting[]="a river";
+$setting[]="a safe house";
+$setting[]="a shelter for battered women";
+$setting[]="a shelter for the homeless";
+$setting[]="a shipyard";
+$setting[]="a shopping mall";
+$setting[]="a stadium";
+$setting[]="a sushi bar";
+$setting[]="a swimming pool";
+$setting[]="a synagogue";
+$setting[]="a taxi";
+$setting[]="a water treatment plant";
+$setting[]="a zoo";
+$setting[]="a movie theater";
+$setting[]="a strip club";
+$setting[]="a cyber cafe";
+$setting[]="an orbital space station";
+$setting[]="a tropical vacation world";
+$setting[]="a replimat";
+$setting[]="a holosimulation cafe";
+$setting[]="an interstellar cruise ship";
+
+/** Act of Villainy **/
+$villainy[]="an abduction";
+$villainy[]="an assault";
+$villainy[]="some air piracy";
+$villainy[]="an armed robbery";
+$villainy[]="an arson";
+$villainy[]="an assassination";
+$villainy[]="a verbal attack";
+$villainy[]="a physical assault";
+$villainy[]="a baby selling ring";
+$villainy[]="a bank robbery";
+$villainy[]="some bigamy";
+$villainy[]="blackmail";
+$villainy[]="a bomb";
+$villainy[]="a campus rape";
+$villainy[]="a car bombing";
+$villainy[]="some large-scale vehicular assault";
+$villainy[]="a carjacking";
+$villainy[]="a car theft";
+$villainy[]="some cattle rustling";
+$villainy[]="a little cock fighting";
+$villainy[]="some generic computer fraud";
+$villainy[]="a conspiracy";
+$villainy[]="a contract murder";
+$villainy[]="a copycat crime";
+$villainy[]="some counterfeiting";
+$villainy[]="a crime of passion";
+$villainy[]="some crime at sea";
+$villainy[]="a data rape";
+$villainy[]="a dog fighting ring";
+$villainy[]="a drive-by shooting";
+$villainy[]="some drug dealing";
+$villainy[]="some drug trafficking";
+$villainy[]="some embezzlement";
+$villainy[]="a little espionage";
+$villainy[]="a little corporate espionage";
+$villainy[]="some extortion";
+$villainy[]="a flag burning";
+$villainy[]="some forgery";
+$villainy[]="a freeway shooting";
+$villainy[]="a gangland slaying";
+$villainy[]="a gang war";
+$villainy[]="a hate crime";
+$villainy[]="a hijacking";
+$villainy[]="a hit-and-run";
+$villainy[]="some hostage taking";
+$villainy[]="some indecent exposure";
+$villainy[]="some insider trading";
+$villainy[]="some major insurance fraud";
+$villainy[]="some jury tampering";
+$villainy[]="a kidnapping";
+$villainy[]="some mail fraud";
+$villainy[]="a mass murder";
+$villainy[]="some mob violence";
+$villainy[]="some money laundering";
+$villainy[]="a large-scale money laundering operation";
+$villainy[]="some electronic money laundering";
+$villainy[]="a Neo-Nazi protest";
+$villainy[]="an obscene phone call";
+$villainy[]="some perjury";
+$villainy[]="a bit of police brutality";
+$villainy[]="some of the usual political corruption";
+$villainy[]="a Ponzi scheme";
+$villainy[]="a prison riot";
+$villainy[]="a prostitution ring";
+$villainy[]="some purse snatching";
+$villainy[]="a random shooting";
+$villainy[]="a rape";
+$villainy[]="some serial killings";
+$villainy[]="some regular sexual harassment";
+$villainy[]="a program of state-sponsored terrorism";
+$villainy[]="an opportunity for statutory rape";
+$villainy[]="a tagging/graffiti expedition";
+$villainy[]="some high-dollar tax evasion";
+$villainy[]="a theft";
+$villainy[]="some treason";
+$villainy[]="a vehicular homicide";
+$villainy[]="some regular vigilantism";
+$villainy[]="an act of violence in school";
+$villainy[]="some local voter fraud";
+$villainy[]="some large-scale voter fraud";
+$villainy[]="some low-level white-collar crime";
+$villainy[]="a child pornography website";
+$villainy[]="a denial of service attack";
+$villainy[]="some cyberstalking";
+$villainy[]="a targeted identity theft";
+$villainy[]="an identity theft brokerage website";
+$villainy[]="some large-scale intellectual property theft";
+$villainy[]="a \"salami slicing\" virus (aka stealing tiny amounts of money from rounding transactions as in Office Space)";
+$villainy[]="some wiretapping";
+$villainy[]="a \"cyberheist\" (aka robbing a bank via attacks on financial institutions and transactions)";
+$villainy[]="a digital piracy ring";
+$villainy[]="a sports betting operation";
+$villainy[]="some sports betting fixing";
+$villainy[]="a ransomware worm";
+$villainy[]="some industrial espionage";
+$villainy[]="some electronic money laundering";
+$villainy[]="some ATM fraud";
+$villainy[]="some rare animal smuggling";
+$villainy[]="some art smuggling";
+$villainy[]="some illegal immigration";
+$villainy[]="some \"revenge porn\"";
+$villainy[]="stealing some expensive trade secrets";
+$villainy[]="counterfeiting some art";
+$villainy[]="counterfeiting some luxury goods";
+$villainy[]="smuggling exotic creatures";
+
+/** Motive **/
+$motive[]="money";
+$motive[]="power";
+$motive[]="revenge";
+$motive[]="sex";
+$motive[]="fame";
+
+
+/** Twists **/
+$twist[]="that somebody unexpected is dead";
+$twist[]="the protagonist getting knocked out";
+$twist[]="a planted bomb";
+$twist[]="in an anonymous text or email";
+$twist[]="that a dark secret is revealed";
+$twist[]="that an emotional wound is revealed";
+$twist[]="that an ally betrays everyone";
+$twist[]="that a guy with a gun walks in";
+$twist[]="that the road is closed";
+$twist[]="that the bridge is out";
+$twist[]="that the characters thought it was a man, but it's a woman";
+$twist[]="that the characters thought it was a woman, but it's a man";
+$twist[]="that the characters thought they were dead, but they aren't";
+$twist[]="that there's a surprise witness";
+$twist[]="that the message didn't go through";
+$twist[]="that the apparently corrupt person is really trustworthy";
+$twist[]="that the apparently trustworthy person is really corrupt";
+$twist[]="that the protagonist finds out they are related to another character";
+$twist[]="an accident";
+$twist[]="an injury";
+$twist[]="that something false goes viral";
+$twist[]="that bad news gets worse";
+$twist[]="that the whole story was a rogue simulation";
+$twist[]="that the entire episode was experimental interactive fiction";
+$twist[]="that the antagonist is an evil twin";
+$twist[]="that the antagonist is an evil clone of one of the characters";
+$twist[]="that the antagonist is a rogue android";
+$twist[]="that the antagonist is a secret clone of the protagonist";
+
+
+$randomsetting = rand(0,count($setting)-1);
+$randomvillainy = rand(0,count($villainy)-1);
+$randommotive = rand(0,count($motive)-1);
+$randomtwist = rand(0,count($twist)-1);
+$RandomCargo = rand(0,count($Cargo)-1);
+$RandomCompetition = rand(0,count($Competition)-1);
+$RandomComplication = rand(0,count($Complication)-1);
+$RandomDestination = rand(0,count($Destination)-1);
+$RandomHelper = rand(0,count($Helper)-1);
+
+if (mt_rand(0,100) > 85){
+     $My_SpaceOperaPlot = sprintf('<p>This thrilling space opera tale opens at %s, where %s, motivated by %s, is setting up %s, aided by %s.  But, the real twist is %s!</p>', $setting[$randomsetting], $Competition[$RandomCompetition], $motive[$randommotive], $villainy[$randomvillainy], $Helper[$RandomHelper], $twist[$randomtwist]);
+}elseif (mt_rand(0,100)>65){
+     $My_SpaceOperaPlot = sprintf('<p>While at %s, the characters meet a patron who hires them to get %s to %s.  Meanwhile, %s is trying to get to them and stop them.  The only problem is that to complete this job they need %s, but with a little help from %s, the ymay just pull it off!</p>', $setting[$randomsetting], $Cargo[$RandomCargo], $Destination[$RandomDestination], $Competition[$RandomCompetition], $Complication[$RandomComplication], $Helper[$RandomHelper]);
+}elseif (mt_rand(0,100)>45){
+     $My_SpaceOperaPlot = sprintf('<p>The mission, if the characters choose to accept it, is to get %s to %s before %s can get to them and stop them.  The only problem is that to complete the job they need %s but with a little help from %s, they may just pull it off!</p>', $Cargo[$RandomCargo], $Destination[$RandomDestination], $Competition[$RandomCompetition], $Complication[$RandomComplication], $Helper[$RandomHelper]);
+}else{
+     $My_SpaceOperaPlot = sprintf('<p>The mission, if the characters choose to accept it, is to get %s to %s before %s can get to them and stop them.  The only problem is that to complete the job they need %s but with a little help from %s, they may just pull it off.  But the real twist is %s!</p>', $Cargo[$RandomCargo], $Destination[$RandomDestination], $Competition[$RandomCompetition], $Complication[$RandomComplication], $Helper[$RandomHelper], $twist[$randomtwist]);
+}
+
+
+$My_SpaceOperaPlot .= '<form name="myform" action=" " method="POST">';
+$My_SpaceOperaPlot .= '<input type="hidden" name="check_submit" value="1"/>';
+$My_SpaceOperaPlot .= '<label> </label><br><br>';
+$My_SpaceOperaPlot .= '<center><input style="background-color:lightgrey; border-color:black; color:black;" type="submit" VALUE="Hit the button for a fresh plot idea!"/></center>';
+$My_SpaceOperaPlot .= '</form>';
+
+$My_SpaceOperaPlot .= '<p><hr style="height:2px;width:100%;border-width:0;color:blue;background-color:black"></p>';
+$My_SpaceOperaPlot .= '<p>Inspired by all the random generators on the internet and every space opera novel ever published and every science fiction role-playing game ever created.</p>';
+$My_SpaceOperaPlot .= '<p>Please, support the createor and visit, <a href="https://www.jkhoffman.com/use-your-words/">Use Your Words, a blog by JK Hoffman</a>.</p>';
+$My_SpaceOperaPlot .= '<p><hr style="height:2px;width:100%;border-width:0;color:blue;background-color:black"></p>';
+ 
+ return $My_SpaceOperaPlot;
+}
