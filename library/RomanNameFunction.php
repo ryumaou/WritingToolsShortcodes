@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 
 function My_RomanNamesFunction(){
 //Check whether the form has been submitted
